@@ -39,7 +39,7 @@ async def continuous_ping(interval=float(os.environ.get('interval', 10))):
     while True:
 
         if os.environ['camera_massage'] != "0":
-            sent_message_to_chanell(os.environ['camera_massage'])
+            await sent_message_to_chanell(os.environ['camera_massage'])
             os.environ['camera_massage'] = "0"
 
         await asyncio.sleep(interval)  # Wait for the specified interval
