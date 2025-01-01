@@ -1,4 +1,5 @@
 from flask import Flask, request, jsonify, render_template
+import os
 
 app = Flask(__name__)
 app.debug = True
@@ -22,6 +23,7 @@ def message_callback():
 
         # Log the received message
         print("Received Message:", data)
+        os.environ['camera_massage'] = data
 
         # Append the received message to the list
         received_messages.append(data)
